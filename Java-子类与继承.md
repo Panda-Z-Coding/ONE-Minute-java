@@ -140,12 +140,45 @@ p.display(); // 调用子类的display方法
 - **多态**（Polymorphism）是指同一个方法在不同对象上有不同的表现形式。通过继承和方法重写实现多态。
 
 ```java
-Parent p;
-p = new Child();
-p.display(); // 调用子类的display方法
-
-p = new AnotherChild();
-p.display(); // 调用AnotherChild的display方法
+// 定义一个父类Animal
+class Animal {
+    void makeSound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+​
+// Dog类继承了Animal类，并重写了makeSound方法
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+​
+// Cat类继承了Animal类，并重写了makeSound方法
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Meow");
+    }
+}
+​
+// Zoo类展示多态应用
+class Zoo {
+    public void makeAnimalSound(Animal animal) {
+        animal.makeSound();
+    }
+​
+    public static void main(String[] args) {
+        Zoo zoo = new Zoo();
+​
+        Animal dog = new Dog();
+        Animal cat = new Cat();
+​
+        zoo.makeAnimalSound(dog); // 输出：Bark
+        zoo.makeAnimalSound(cat); // 输出：Meow
+    }
+}
 ```
 
 ## abstract类与abstract方法
