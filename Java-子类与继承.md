@@ -127,6 +127,8 @@ final int f = 0  //f 不能被修改
 - **上转型**（Upcasting）是指将子类对象转换为父类类型。上转型后，子类对象只能调用父类中声明的方法，但实际运行时仍调用子类重写的方法。
 - **语法** 父类 类名 = new 子类;
 - **对象与上转型对象**
+  
+![对应关系](https://github.com/Leno0z/MyBolg/assets/157597971/b6651077-4915-4cb6-9fa7-593baa846787)
 
 ```java
 Parent p = new Child();
