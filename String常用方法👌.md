@@ -3,17 +3,17 @@
 ### 「操作String的方法」
 
 ```java
-public int length()  // 获取长度
-public boolean equals(String s) // 查看两个String对象是否相等
-public boolean startsWith(String s) // 前缀是否是s
-public boolean endsWith(String s) // 后缀是否是s
-public int compareTo(String s) // 通过字典序比较，返回正值、0、负数
-public boolean contains(String s) // 判断String对象里是否含有 s
-public int indexOf(String s) // 返回首次出现s的位置
-public int lastIndexOf(String s) // 返回最后一次出现s的位置
-public String subString(int startpoint) // 获得一个从该位置到最后的新String对象
+public int length()                        // 获取长度
+public boolean equals(String s)            // 查看两个String对象是否相等
+public boolean startsWith(String s)        // 前缀是否是s
+public boolean endsWith(String s)          // 后缀是否是s
+public int compareTo(String s)             // 通过字典序比较，返回正值、0、负数
+public boolean contains(String s)          // 判断String对象里是否含有 s
+public int indexOf(String s)               // 返回首次出现s的位置
+public int lastIndexOf(String s)           // 返回最后一次出现s的位置
+public String subString(int startpoint)    // 获得一个从该位置到最后的新String对象
 public String subString(int start,int end) // 类似上一个，可以指定最后的位置
-public String trim() // 获得该对象去除前后空格的新对象
+public String trim()                       // 获得该对象去除前后空格的新对象
 
 ```
 
@@ -38,9 +38,9 @@ public static String valueOf(_数据类型_ n) //返回一个String对象的引�
 _**基本类型的进制表示**_
 
 ~~~java
-public static String toBinaryString(int i) // 返回i的二进制String表示
-public static String toOctalString(int i) // 八进制
-public static String toHexString(int i) // 十六进制
+public static String toBinaryString(int i)  // 返回i的二进制String表示
+public static String toOctalString(int i)   // 八进制
+public static String toHexString(int i)     // 十六进制
 // int i 或者 long i 都可以
 ~~~
 
@@ -96,7 +96,7 @@ public class EncryptAndDecrypt {
         char[] c = sourceString.toCharArray ();
         int m = c.length;
         for(int k=0;k<m;k++) {
-            int mima = c[k] + p[k % n];
+            int mima = c[k] + p[k % n];  //加密
             c[k] = (char) mima;
         }
         return new String (c);
@@ -107,7 +107,7 @@ public class EncryptAndDecrypt {
         char[] c = sourceString.toCharArray ();
         int m = c.length;
         for (int k = 0; k < m; k++) {
-            int mima = c[k] - p[k % n];
+            int mima = c[k] - p[k % n];  //解密
             c[k] = (char) mima;
         }
         return new String (c);
